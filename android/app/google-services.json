@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "734717496789",
+    "project_id": "appkamussahu",
+    "storage_bucket": "appkamussahu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734717496789:android:e4162c199a0e7371fe815c",
+        "android_client_info": {
+          "package_name": "com.example.app_kamus_daerah_sahu_tala_i"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVmNb1-AHS91TqrifUsff5XSqFbnPdRvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
