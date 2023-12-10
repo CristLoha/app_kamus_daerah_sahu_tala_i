@@ -1,3 +1,4 @@
+import 'package:app_kamus_daerah_sahu_tala_i/common/styles.dart';
 import 'package:app_kamus_daerah_sahu_tala_i/data/provider/category_provider.dart';
 import 'package:app_kamus_daerah_sahu_tala_i/pages/home/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -36,7 +37,7 @@ class AppSahu extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Kamus Bahasa Sahu',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: darkRed),
         useMaterial3: true,
       ),
       initialRoute: BottomNavigationBarpage.routeName,

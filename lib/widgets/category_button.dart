@@ -1,3 +1,4 @@
+import 'package:app_kamus_daerah_sahu_tala_i/common/styles.dart';
 import 'package:app_kamus_daerah_sahu_tala_i/data/model/category.dart';
 import 'package:app_kamus_daerah_sahu_tala_i/data/provider/category_provider.dart';
 import 'package:flutter/material.dart';
@@ -17,18 +18,17 @@ class CategoryButton extends StatelessWidget {
         categoryProvider.selectedCategory = category;
       },
       child: Container(
-        width: 90,
-        height: 40,
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: categoryProvider.selectedCategory == category
-              ? Colors.blue
-              : Colors.transparent,
+              ? darkRed
+              : transparent,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: categoryProvider.selectedCategory == category
-                ? Colors.transparent
-                : Colors.grey,
-            width: 2.0,
+                ? transparent
+                : charcoalGray,
+            width: 0.5,
           ),
         ),
         child: Center(

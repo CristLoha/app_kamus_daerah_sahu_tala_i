@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../data/model/category.dart';
 import '../data/provider/category_provider.dart';
 
 class ContentList extends StatelessWidget {
+  const ContentList({super.key});
+
   @override
   Widget build(BuildContext context) {
     final selectedCategory = context.watch<CategoryProvider>().selectedCategory;
-
-    // Implement logic to display data based on the selected category
-    // For example, you can use a ListView.builder
     return ListView.builder(
-      itemCount: 10, // Number of items to display
+      shrinkWrap: true,
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 10,
       itemBuilder: (context, index) {
-        // Replace this widget with the actual data
         return ListTile(
           title: Text('${categoryToString(selectedCategory)} Item $index'),
         );
