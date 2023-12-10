@@ -1,3 +1,4 @@
+import 'package:app_kamus_daerah_sahu_tala_i/data/provider/category_provider.dart';
 import 'package:app_kamus_daerah_sahu_tala_i/pages/home/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,17 +13,23 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(
-      create: (context) => BottomNavigationBarProvider(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => BottomNavigationBarProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CategoryProvider(),
+        ),
+      ],
+      child: const AppSahu(),
     ),
-  ], child: const AppSahu()));
+  );
 }
 
 class AppSahu extends StatelessWidget {
   const AppSahu({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

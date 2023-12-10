@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-
-enum Category {
-  semuaKata,
-  hewan,
-  angka,
-  tempat,
-}
+import '../model/category.dart';
 
 class CategoryProvider with ChangeNotifier {
-  Category _selectCategory = Category.semuaKata;
+  Category _selectedCategory = Category.semuaKata;
 
-  Category get selectCategory => _selectCategory;
+  Category get selectedCategory => _selectedCategory;
 
-  set selectCategory(Category category) {
-    _selectCategory = category;
+  set selectedCategory(Category category) {
+    _selectedCategory = category;
     notifyListeners();
   }
 }

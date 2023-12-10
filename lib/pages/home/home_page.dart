@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../data/model/category.dart';
+import '../../data/provider/category_provider.dart';
+import '../../widgets/category_button.dart';
+import '../../widgets/content_list.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home_page';
@@ -18,43 +23,29 @@ class HomePage extends StatelessWidget {
             children: [
               Text('Kategori'),
               SizedBox(height: 14),
-              Row(
-                children: [
-                  Container(
-                    width: 90,
-                    height: 40,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text(
-                        'Hewan',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 16,
-                  ),
-                  Container(
-                    width: 90,
-                    height: 40,
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text(
-                        'Hewan',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CategoryButton(Category.semuaKata),
+                    SizedBox(width: 16),
+                    CategoryButton(Category.hewan),
+                    SizedBox(width: 16),
+                    CategoryButton(Category.angka),
+                    SizedBox(width: 16),
+                    CategoryButton(Category.tempat),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                  'Data berdasarkan kategori "${categoryToString(context.watch<CategoryProvider>().selectedCategory)}":'),
+              SizedBox(height: 10),
+              Expanded(
+                child: ContentList(),
+              ),
+              SizedBox(width: 30),
+              Text('Wakwaw')
             ],
           ),
         ),
