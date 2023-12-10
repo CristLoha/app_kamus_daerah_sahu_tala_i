@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class CategoryButton extends StatelessWidget {
   final Category category;
 
-  CategoryButton(this.category);
+  const CategoryButton(this.category, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,22 @@ class CategoryButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: categoryProvider.selectedCategory == category
               ? Colors.blue
-              : Colors.amber,
-          borderRadius: BorderRadius.circular(20),
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: categoryProvider.selectedCategory == category
+                ? Colors.transparent
+                : Colors.grey,
+            width: 2.0,
+          ),
         ),
         child: Center(
           child: Text(
             categoryToString(category),
             style: TextStyle(
-              color: Colors.white,
+              color: categoryProvider.selectedCategory == category
+                  ? Colors.white
+                  : Colors.black,
             ),
           ),
         ),
